@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useSetRecoilState } from "recoil";
-import { IUser, user } from "../atom";
+import { user } from "../modules/UserList/atom";
+import { IUsertemp } from "../modules/UserList/type";
 
 function Join() {
   const [id, setId] = useState("");
@@ -15,7 +16,7 @@ function Join() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newbby: IUser = {
+    const newbby: IUsertemp = {
       id,
       pwd,
       name,
@@ -25,7 +26,7 @@ function Join() {
   };
 
   const handleSaveCookie = () => {
-    const newbby: IUser = {
+    const newbby: IUsertemp = {
       id,
       pwd,
       name,
@@ -69,7 +70,7 @@ function Join() {
         <button style={{ marginRight: 30 }}>change User</button>
         <button onClick={handleSaveCookie}>save in Cookie</button>
       </form>
-      <div>{coockies.user.id}</div>
+      {/* <div>{coockies.user.id}</div> */}
     </>
   );
 }

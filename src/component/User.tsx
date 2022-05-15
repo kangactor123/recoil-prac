@@ -1,11 +1,12 @@
 import { useRecoilState } from "recoil";
-import { IUser, user } from "../atom";
+import { user } from "../modules/UserList/atom";
+import { IUsertemp } from "../modules/UserList/type";
 
 function User() {
-  const [loginUser, setLoginUser] = useRecoilState<IUser>(user);
+  const [loginUser, setLoginUser] = useRecoilState<IUsertemp>(user);
 
   const handleClick = () => {
-    const newUser: IUser = {
+    const newUser: IUsertemp = {
       id: "osci",
       pwd: "admin",
       name: "admin me",
@@ -16,7 +17,7 @@ function User() {
   };
 
   const handleReset = () => {
-    setLoginUser({} as IUser);
+    setLoginUser({} as IUsertemp);
   };
   return (
     <>
