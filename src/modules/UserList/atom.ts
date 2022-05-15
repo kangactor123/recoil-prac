@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import { getUserList } from "./api";
-import { IUser, IUsertemp } from "./type";
+import { IUser, IUsertemp } from "../type";
 
 const localStorageEffect =
   (key: string) =>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useSetRecoilState } from "recoil";
 import { user } from "../modules/UserList/atom";
-import { IUsertemp } from "../modules/UserList/type";
+import { IUsertemp } from "../modules/type";
 
 function Join() {
   const [id, setId] = useState("");

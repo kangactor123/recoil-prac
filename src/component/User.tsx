@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { user } from "../modules/UserList/atom";
-import { IUsertemp } from "../modules/UserList/type";
+import { IUsertemp } from "../modules/type";
 
 function User() {
   const [loginUser, setLoginUser] = useRecoilState<IUsertemp>(user);

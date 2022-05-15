@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useRecoilState } from "recoil";
 import { userList } from "../modules/UserList/atom";
-import { IUser } from "../modules/UserList/type";
+import { IUser } from "../modules/type";
 
 // Selector 로 atom 을 초기화 시킬 필요가 없다.
 // atom 의 effect 를 활용해서 atom 을 쉽게 초기화 할 수 있다.
