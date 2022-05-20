@@ -1,6 +1,7 @@
 import { atom, selector } from "recoil";
 import { getUserList } from "./api";
 import { IUser, IUsertemp } from "../type";
+import { recoilPersist } from "recoil-persist";
 
 const localStorageEffect =
   (key: string) =>
@@ -60,18 +61,25 @@ const asyncUserListEffect =
     });
   };
 
+const { persistAtom } = recoilPersist({
+  key: "recoil-persist-atom",
+  storage: sessionStorage,
+  // storage: sessionStorage,
+});
+
 // atom 집합은 React 컨텍스트 외부에서 생성된다
 // atom 의 초기값을 서버 데이터로 초기화 하고 싶다면 effects 를 활용!!
 export const user = atom<IUsertemp>({
   key: "user",
   default: {} as IUsertemp,
-  effects: [localStorageEffect("user"), sessionStorageEffect("user")],
+  // effects: [localStorageEffect("user"), sessionStorageEffect("user")],
+  effects: [persistAtom],
 });
 
 // Effects 를 활용해 atom 의 초기값 설정
 export const userList = atom<IUser[]>({
   key: "userList",
-  // default: [] as IUser[],
+  default: [] as IUser[],
   effects: [asyncUserListEffect("list")],
 });
 

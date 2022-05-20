@@ -7,11 +7,10 @@ import User from "./component/User";
 function App() {
   return (
     <>
-      <Family id={2} />
+      {/* <Family id={2} /> */}
       {/* <Persist /> */}
-      {/* {list.length !== 0 && <Persist />} */}
-      {/* <User /> */}
-      {/* <Join /> */}
+      <User />
+      <Join />
     </>
   );
 }

@@ -7246,10 +7246,15 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"recoil@^0.7.3-alpha.2":
-  "integrity" "sha512-8LL4T8Bh7WMA5/ka+420PCenaUFie0457kyxX7cy/gsyRlbIGYpyNkAyU0znCvtHTN2clVYkTjGF6zKJ/DzzJg=="
-  "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.7.3-alpha.2.tgz"
-  "version" "0.7.3-alpha.2"
+"recoil-persist@^4.1.0":
+  "integrity" "sha512-7ruOsLhrEqBpl8EM6j5OITSKJXvH7BfSDxO5m1Heb3dJo6mnCJ3t4ln1KDJhZrvFOkqyO37Ufv3VB1wU06tfCA=="
+  "resolved" "https://registry.npmjs.org/recoil-persist/-/recoil-persist-4.1.0.tgz"
+  "version" "4.1.0"
+
+"recoil@^0.6.1":
+  "integrity" "sha512-J7oT3LZl2vpyFClgSUpOQjpykz84VSX/NJE/PavAtR8n7Z+whEdVBPUtwc2TEWjONeL/lJmiac2XQ+qEOQA52Q=="
+  "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.6.1.tgz"
+  "version" "0.6.1"
   dependencies:
     "hamt_plus" "1.0.2"
 

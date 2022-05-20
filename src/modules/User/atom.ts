@@ -1,6 +1,11 @@
 import { atom, atomFamily, selector } from "recoil";
+import { recoilPersist } from "recoil-persist";
 import { IUser } from "../type";
 import { getSelectedUser } from "./api";
+
+// Recoil 0.6.1 버전 지원
+// 최신 버전 지원 x
+const { persistAtom } = recoilPersist();
 
 const asyncUserEffect =
   (key: string, id: number) =>
@@ -30,5 +35,6 @@ const asyncUserEffect =
 // 첫 번째 제네릭은 아톰의 타입, 두 번째 제네릭은 param 의 타입
 export const userAtom = atomFamily<IUser, number>({
   key: "userAtom",
-  effects: (param) => [asyncUserEffect("userAtom", param)],
+  default: {} as IUser,
+  effects: (param: number) => [asyncUserEffect("userAtom", param), persistAtom],
 });
